@@ -7,12 +7,12 @@ export default function Show({ conference }) {
         <>
             <Head title={conference.title} />
             <Navbar />
-            <div className="min-h-screen bg-zinc-900 p-8">
+            <div className="min-h-screen bg-zinc-900 flex items-center justify-center p-8">
                 <div
                     data-aos="fade-up"
-                    className="bg-white shadow-xl rounded-2xl p-10 max-w-2xl mx-auto"
+                    className="bg-white shadow-xl rounded-2xl p-10 max-w-2xl w-full mx-auto"
                 >
-                    <h1 className="text-3xl font-bold mb-4">
+                    <h1 className="text-3xl font-bold mb-4 text-gray-900">
                         {conference.title}
                     </h1>
                     <p className="text-gray-700 mb-2">

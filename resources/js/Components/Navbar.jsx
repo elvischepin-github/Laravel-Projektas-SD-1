@@ -1,4 +1,5 @@
 import lt from "@/lang/lt";
+import { Link } from "@inertiajs/react";
 
 export default function Navbar() {
     const user = { name: "Elvis", surname: "Cepinskas" };
@@ -12,6 +13,12 @@ export default function Navbar() {
                 >
                     {lt.back}
                 </button>
+                <Link
+                    href="/"
+                    className="bg-zinc-700 text-zinc-200 text-sm font-medium px-4 py-2 rounded-xl hover:bg-zinc-600 transition"
+                >
+                    {lt.home}
+                </Link>
                 <span className="font-semibold text-zinc-200">
                     {user.name} {user.surname}
                 </span>

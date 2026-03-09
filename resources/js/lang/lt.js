@@ -1,6 +1,7 @@
 const lt = {
     // Navbar
     back: "← Atgal",
+    home: "Pagrindinis",
     logout: "Atsijungti",
 
     // Home

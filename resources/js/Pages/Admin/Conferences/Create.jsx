@@ -23,12 +23,12 @@ export default function Create() {
         <>
             <Head title="New Conference" />
             <Navbar />
-            <div className="min-h-screen bg-zinc-900 p-8">
+            <div className="min-h-screen bg-zinc-900 flex items-center justify-center p-8">
                 <div
                     data-aos="fade-up"
-                    className="bg-white shadow-xl rounded-2xl p-10 max-w-2xl mx-auto"
+                    className="bg-white shadow-xl rounded-2xl p-10 max-w-2xl w-full mx-auto"
                 >
-                    <h1 className="text-3xl font-bold mb-6">
+                    <h1 className="text-3xl font-bold mb-6 text-gray-900">
                         {lt.newConference}
                     </h1>
                     <ConferenceForm

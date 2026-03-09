@@ -8,7 +8,7 @@ export default function Index({ conferences }) {
             <Head title="All Conferences" />
             <Navbar />
             <div className="min-h-screen bg-zinc-900 p-8">
-                <h1 data-aos="fade-down" className="text-3xl font-bold mb-6">
+                <h1 data-aos="fade-down" className="text-3xl font-bold mb-6 text-white">
                     {lt.allConferences}
                 </h1>
                 <table
