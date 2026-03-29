@@ -12,8 +12,10 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->text('description')->nullable();
-            $table->string('location');
-            $table->dateTime('date');
+            $table->string('lecturers');
+            $table->date('date');
+            $table->time('time');
+            $table->string('address');
             $table->timestamps();
         });
     }

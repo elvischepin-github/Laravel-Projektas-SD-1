@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Data\MockDatabase;
+use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\UpdateUserRequest;
-use Illuminate\Routing\Controller;
+use App\Models\User;
 use Inertia\Inertia;
 
 class UserController extends Controller
@@ -12,19 +12,21 @@ class UserController extends Controller
     public function index()
     {
         return Inertia::render('Admin/Users/Index', [
-            'users' => MockDatabase::users(),
+            'users' => User::orderBy('surname')->get(['id', 'name', 'surname', 'email']),
         ]);
     }
 
     public function edit($id)
     {
         return Inertia::render('Admin/Users/Edit', [
-            'user' => MockDatabase::findUser((int) $id),
+            'user' => User::findOrFail($id),
         ]);
     }
 
     public function update(UpdateUserRequest $request, $id)
     {
+        User::findOrFail($id)->update($request->only('name', 'surname'));
+
         return redirect()->route('admin.users.index');
     }
 }

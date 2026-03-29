@@ -33,6 +33,10 @@ class HandleInertiaRequests extends Middleware
             ...parent::share($request),
             'auth' => [
                 'user' => $request->user(),
+                'roles' => $request->user()?->roles->pluck('name')->toArray() ?? [],
+            ],
+            'flash' => [
+                'error' => session('error'),
             ],
         ];
     }

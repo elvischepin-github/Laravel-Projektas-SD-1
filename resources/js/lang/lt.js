@@ -4,6 +4,15 @@ const lt = {
     home: "Pagrindinis",
     logout: "Atsijungti",
 
+    // Auth
+    login: "Prisijungti",
+    registerTitle: "Registruotis",
+    password: "Slaptažodis",
+    confirmPassword: "Pakartoti slaptažodį",
+    alreadyRegistered: "Jau turite paskyrą?",
+    rememberMe: "Prisiminti mane",
+    forgotPassword: "Pamiršote slaptažodį?",
+
     // Home
     conferenceSystem: "Konferencijų sistema",
     group: "Grupė: PIT-23-NL",

@@ -1,4 +1,4 @@
-import { Head, Link } from "@inertiajs/react";
+import { Head, Link, router } from "@inertiajs/react";
 import Navbar from "@/Components/Navbar";
 import lt from "@/lang/lt";
 
@@ -48,7 +48,7 @@ export default function Index({ conferences }) {
                                     {c.date}
                                 </td>
                                 <td className="px-6 py-4 text-sm text-gray-600">
-                                    {c.location}
+                                    {c.address}
                                 </td>
                                 <td className="px-6 py-4 flex gap-2">
                                     <Link
@@ -57,22 +57,12 @@ export default function Index({ conferences }) {
                                     >
                                         {lt.view}
                                     </Link>
-                                    <form
-                                        method="POST"
-                                        action={`/client/${c.id}/register`}
+                                    <button
+                                        onClick={() => router.post(`/client/${c.id}/register`)}
+                                        className="bg-gray-800 text-white px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-gray-700 transition"
                                     >
-                                        <input
-                                            type="hidden"
-                                            name="_token"
-                                            value=""
-                                        />
-                                        <button
-                                            type="submit"
-                                            className="bg-gray-800 text-white px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-gray-700 transition"
-                                        >
-                                            {lt.register}
-                                        </button>
-                                    </form>
+                                        {lt.register}
+                                    </button>
                                 </td>
                             </tr>
                         ))}

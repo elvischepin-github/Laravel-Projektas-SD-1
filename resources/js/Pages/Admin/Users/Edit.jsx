@@ -6,7 +6,6 @@ export default function Edit({ user }) {
     const { data, setData, put, errors, processing } = useForm({
         name: user.name,
         surname: user.surname,
-        email: user.email,
     });
 
     function handleSubmit(e) {
@@ -64,25 +63,6 @@ export default function Edit({ user }) {
                             {errors.surname && (
                                 <p className="text-red-600 text-sm mt-1">
                                     {errors.surname}
-                                </p>
-                            )}
-                        </div>
-
-                        <div>
-                            <label className="block text-sm font-medium text-gray-600 mb-1.5">
-                                {lt.email}
-                            </label>
-                            <input
-                                type="email"
-                                value={data.email}
-                                onChange={(e) =>
-                                    setData("email", e.target.value)
-                                }
-                                className="w-full border border-gray-200 rounded-xl px-4 py-2.5 bg-gray-50/50 focus:outline-none focus:ring-2 focus:ring-red-400 focus:border-transparent transition"
-                            />
-                            {errors.email && (
-                                <p className="text-red-600 text-sm mt-1">
-                                    {errors.email}
                                 </p>
                             )}
                         </div>

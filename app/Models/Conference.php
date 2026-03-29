@@ -9,14 +9,7 @@ class Conference extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'description', 'location', 'date'];
-
-    protected function casts(): array
-    {
-        return [
-            'date' => 'datetime',
-        ];
-    }
+    protected $fillable = ['title', 'description', 'lecturers', 'date', 'time', 'address'];
 
     public function registeredUsers()
     {

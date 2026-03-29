@@ -45,7 +45,7 @@ export default function Index({ conferences }) {
                                     {c.date}
                                 </td>
                                 <td className="px-6 py-4 text-sm text-gray-600">
-                                    {c.location}
+                                    {c.address}
                                 </td>
                                 <td className="px-6 py-4">
                                     <Link

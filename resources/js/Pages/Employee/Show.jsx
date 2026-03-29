@@ -46,6 +46,9 @@ export default function Show({ conference, clients }) {
                                     {lt.name}
                                 </th>
                                 <th className="px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                                    {lt.surname}
+                                </th>
+                                <th className="px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">
                                     {lt.email}
                                 </th>
                             </tr>
@@ -58,6 +61,9 @@ export default function Show({ conference, clients }) {
                                 >
                                     <td className="px-4 py-3 text-sm font-medium text-gray-800">
                                         {client.name}
+                                    </td>
+                                    <td className="px-4 py-3 text-sm text-gray-600">
+                                        {client.surname}
                                     </td>
                                     <td className="px-4 py-3 text-sm text-gray-600">
                                         {client.email}
