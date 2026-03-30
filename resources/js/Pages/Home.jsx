@@ -45,7 +45,7 @@ export default function Home() {
                         {lt.conferenceSystem}
                     </h1>
                     <p className="text-sm text-gray-500 mb-0.5">
-                        Elvis Cepinskas
+                        {user ? user.name : "Elvis Cepinskas"}
                     </p>
                     <p className="text-sm text-gray-400 mb-8">{lt.group}</p>
 
