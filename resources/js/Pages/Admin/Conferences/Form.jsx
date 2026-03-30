@@ -1,4 +1,5 @@
 import lt from "@/lang/lt";
+import { Link } from "@inertiajs/react";
 
 const inputClass =
     "w-full border border-gray-200 rounded-xl px-4 py-2.5 bg-gray-50/50 focus:outline-none focus:ring-2 focus:ring-red-400 focus:border-transparent transition";
@@ -123,12 +124,12 @@ export default function ConferenceForm({
                 >
                     {submitLabel}
                 </button>
-                <a
+                <Link
                     href="/admin/conferences"
                     className="bg-gray-100 text-gray-700 px-6 py-2.5 rounded-xl font-medium hover:bg-gray-200 transition"
                 >
                     {lt.cancel}
-                </a>
+                </Link>
             </div>
         </form>
     );

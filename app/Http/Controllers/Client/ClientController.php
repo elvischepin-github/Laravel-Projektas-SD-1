@@ -21,8 +21,11 @@ class ClientController extends Controller
 
     public function show($id)
     {
+        $conference = Conference::findOrFail($id);
+
         return Inertia::render('Client/Show', [
-            'conference' => Conference::findOrFail($id),
+            'conference'    => $conference,
+            'isRegistered'  => Auth::user()->conferences()->where('conference_id', $id)->exists(),
         ]);
     }
 

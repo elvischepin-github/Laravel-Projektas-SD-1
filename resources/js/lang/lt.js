@@ -41,6 +41,7 @@ const lt = {
 
     // Client
     upcomingConferences: "Artėjančios konferencijos",
+    alreadyRegisteredConference: "Jau esate užsiregistravęs į šią konferenciją.",
 
     // Employee
     allConferences: "Visos konferencijos",
