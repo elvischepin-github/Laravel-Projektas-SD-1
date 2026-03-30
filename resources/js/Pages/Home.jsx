@@ -1,8 +1,22 @@
 import { Head, Link } from "@inertiajs/react";
 import Navbar from "@/Components/Navbar";
 import lt from "@/lang/lt";
+import { usePage } from "@inertiajs/react";
 
 export default function Home() {
+    const { auth } = usePage().props;
+    const user = auth?.user;
+    const roles = auth?.roles ?? [];
+
+    const roleLink = () => {
+        if (roles.includes('admin'))    return { href: '/admin',    label: lt.administrator };
+        if (roles.includes('employee')) return { href: '/employee', label: lt.employee };
+        if (roles.includes('client'))   return { href: '/client',   label: lt.client };
+        return null;
+    };
+
+    const link = roleLink();
+
     return (
         <>
             <Head title="Home" />
@@ -36,24 +50,31 @@ export default function Home() {
                     <p className="text-sm text-gray-400 mb-8">{lt.group}</p>
 
                     <div className="flex flex-col gap-3">
-                        <Link
-                            href="/client"
-                            className="block bg-gradient-to-r from-red-500 to-orange-400 text-white py-3 rounded-xl font-medium hover:opacity-90 transition shadow-md"
-                        >
-                            {lt.client}
-                        </Link>
-                        <Link
-                            href="/employee"
-                            className="block bg-gray-900 text-white py-3 rounded-xl font-medium hover:bg-gray-800 transition"
-                        >
-                            {lt.employee}
-                        </Link>
-                        <Link
-                            href="/admin"
-                            className="block bg-gray-100 text-gray-700 py-3 rounded-xl font-medium hover:bg-gray-200 transition"
-                        >
-                            {lt.administrator}
-                        </Link>
+                        {user ? (
+                            link && (
+                                <Link
+                                    href={link.href}
+                                    className="block bg-gradient-to-r from-red-500 to-orange-400 text-white py-3 rounded-xl font-medium hover:opacity-90 transition shadow-md"
+                                >
+                                    {link.label}
+                                </Link>
+                            )
+                        ) : (
+                            <>
+                                <Link
+                                    href={route('login')}
+                                    className="block bg-gradient-to-r from-red-500 to-orange-400 text-white py-3 rounded-xl font-medium hover:opacity-90 transition shadow-md"
+                                >
+                                    {lt.login}
+                                </Link>
+                                <Link
+                                    href={route('register')}
+                                    className="block bg-gray-900 text-white py-3 rounded-xl font-medium hover:bg-gray-800 transition"
+                                >
+                                    {lt.registerTitle}
+                                </Link>
+                            </>
+                        )}
                     </div>
                 </div>
             </div>
